@@ -17,10 +17,10 @@ class ViewController: UIViewController {
         let location = gestureRecognizer.location(in: view)
         let circleView = addCircleView(in: location)
 
-        let pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(didPinchPotView))
+        let pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(didPinchView))
         circleView.addGestureRecognizer(pinchGestureRecognizer)
 
-        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPanPotView))
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPanView))
         circleView.addGestureRecognizer(panGestureRecognizer)
     }
 
@@ -35,21 +35,21 @@ class ViewController: UIViewController {
         return circleView
     }
 
-    @objc func didPinchPotView(gestureRecognizer: UIPinchGestureRecognizer) {
-        if gestureRecognizer.state == .began || gestureRecognizer.state == .changed {
-            guard let transform = gestureRecognizer.view?.transform else { return }
-            let scale = gestureRecognizer.scale
-            gestureRecognizer.view?.transform = transform.scaledBy(x: scale, y: scale)
-            gestureRecognizer.scale = 1.0
-        }
+@objc func didPinchView(gestureRecognizer: UIPinchGestureRecognizer) {
+    if gestureRecognizer.state == .began || gestureRecognizer.state == .changed {
+        guard let transform = gestureRecognizer.view?.transform else { return }
+        let scale = gestureRecognizer.scale
+        gestureRecognizer.view?.transform = transform.scaledBy(x: scale, y: scale)
+        gestureRecognizer.scale = 1.0
     }
+}
 
-    @objc func didPanPotView(sender: UIPanGestureRecognizer) {
-        let viewToMove = sender.view!
-        view.bringSubview(toFront: viewToMove)
-        let translation = sender.translation(in: view)
-        let newCenter = CGPoint(x: viewToMove.center.x + translation.x, y: viewToMove.center.y + translation.y)
-        viewToMove.center = newCenter
-        sender.setTranslation(CGPoint.zero, in: view)
-    }
+@objc func didPanView(sender: UIPanGestureRecognizer) {
+    let viewToMove = sender.view!
+    view.bringSubview(toFront: viewToMove)
+    let translation = sender.translation(in: view)
+    let newCenter = CGPoint(x: viewToMove.center.x + translation.x, y: viewToMove.center.y + translation.y)
+    viewToMove.center = newCenter
+    sender.setTranslation(CGPoint.zero, in: view)
+}
 }
