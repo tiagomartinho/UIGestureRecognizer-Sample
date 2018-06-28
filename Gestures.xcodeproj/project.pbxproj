@@ -56,12 +56,20 @@
 			children = (
 				2449C34F20E4E8C900BB40A9 /* AppDelegate.swift */,
 				2449C35120E4E8C900BB40A9 /* ViewController.swift */,
+				2449C36120E4E8F400BB40A9 /* Supporting Files */,
+			);
+			path = Gestures;
+			sourceTree = "<group>";
+		};
+		2449C36120E4E8F400BB40A9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				2449C35320E4E8C900BB40A9 /* Main.storyboard */,
 				2449C35620E4E8CA00BB40A9 /* Assets.xcassets */,
 				2449C35820E4E8CA00BB40A9 /* LaunchScreen.storyboard */,
 				2449C35B20E4E8CA00BB40A9 /* Info.plist */,
 			);
-			path = Gestures;
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,7 +290,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4C34FT6ABU;
-				INFOPLIST_FILE = Gestures/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Gestures/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,7 +308,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4C34FT6ABU;
-				INFOPLIST_FILE = Gestures/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Gestures/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
